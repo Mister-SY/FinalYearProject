@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MovieModel>
+@{
+    ViewData["Title"] = "Products";
+
+    var movie = (List<MovieModel>)ViewData["movie"];
+}
+
+<div class="row">
+    @foreach (var movies in movie)
+    {
+        <div class="col-md-4" style="justify-items:center; align-content:center;">
+            <a href="MovieDetails?id=@movies.MovieID">
+                <img src=@movies.MovieLink style="width:229px; height:260px; margin:auto; padding:10px" />
+                <p style="margin-top:15px; text-align:center">
+                    @movies.MovieTitle
+                </p>
+            </a>
+        </div>
+    }
+    </div>
+

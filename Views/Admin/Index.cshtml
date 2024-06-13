@@ -1,0 +1,62 @@
+﻿@using System.Text
+@{
+    ViewData["Title"] = "Home Page";
+    Context.Session.TryGetValue("FirstName", out var FirstName_InBytes);
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Welcome @Encoding.UTF8.GetString(FirstName_InBytes)</h1>
+   <!-- <div class="row">
+
+
+        <div class="col" style="justify-items: right">
+            <a href="~/Admin/ProductManager">
+                <p style="margin-top: 25px; text-align: right">
+                    <h1 class="display-4" style=" font-size: larger; font-weight:700"> Product Manager </h1>
+                </p>
+            </a>
+
+        </div>
+
+
+        <div class="col" style="justify-items: center">
+            <a href="~/Admin/StreamMovieManager">
+                <p style="margin-top: 25px; text-align: right">
+                    <h1 class="display-4" style=" font-size: larger; font-weight: 700"> Movie Manager </h1>
+                </p>
+            </a>
+        </div>
+
+        <div class="col" style="justify-items: center">
+            <a href="~/Admin/StreamSeriesManager">
+                <p style="margin-top: 25px; text-align: right">
+                    <h1 class="display-4" style=" font-size: larger; font-weight: 700"> Series Manager </h1>
+                </p>
+            </a>
+        </div>
+
+        <div class="col" style="justify-items: right">
+            <a href="~/Admin/TechManager">
+                <p style="margin-top: 25px; text-align: right">
+                    <h1 class="display-4" style=" font-size: larger; font-weight: 700">  Tech Manager </h1>
+                </p>
+            </a>
+        </div>
+
+        <div class="col" style="justify-items: right">
+            <a href="~/Admin/CustomerManager">
+                <p style="margin-top: 25px; text-align: right">
+                    <h1 class="display-4" style=" font-size: larger; font-weight: 700">  Customer Manager </h1>
+                </p>
+            </a>
+        </div>
+        <div class="col" style="justify-items: right">
+            <a href="~/Admin/CustomerManager">
+                <p style="margin-top: 25px; text-align: right">
+                    <h1 class="display-4" style=" font-size: larger; font-weight: 700">  Logout </h1>
+                </p>
+            </a>
+        </div>
+
+    </div>-->
+</div>

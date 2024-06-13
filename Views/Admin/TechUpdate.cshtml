@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Update Tech Page";
+    var rent = (RentModel)ViewData["rent"];
+}
+
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Update Tech Details</h1>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form asp-controller="Admin" asp-action="Index" method="post">
+                <input class="form-control" id="rentid" type="text" name="rentid" placeholder="Rent ID" readonly value=@rent.RentID><br />
+                <input class="form-control" id="techname" type="text" name="techname" placeholder="Enter Name" required value=@rent.ProductName><br />
+                <input class="form-control" id="rentalprice" type="number" name="rentalprice" placeholder="Enter Rental Price" required value=@rent.RentalPrice><br />
+                <input class="form-control" id="supplierid" type="number" name="supplierid" placeholder="Enter Supplier ID" required value=@rent.SupplierID><br />
+                <input class="form-control" id="stock" type="number" name="stock" placeholder="Enter Stock" required value=@rent.Stock><br />
+                <input class="form-control" id="techlink" type="url" name="techlink" placeholder="Enter Tech Image Link" required value=@rent.ProductImageLink><br />
+                <textarea class="form-control" id="rentdesc" type="text" name="rentdesc" placeholder="Enter Description" required value=@rent.Description></textarea><br />
+                <input type="submit" value="Save" OnClick="authenticateLogin" class="form-control btn btn-primary" />
+            </form>
+        </div>
+    </div>
+</div>

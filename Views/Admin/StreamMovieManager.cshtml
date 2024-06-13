@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Movie";
+    var movie = (List<MovieModel>)ViewData["movie"];
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Welcome to Movie Management</h1>
+    <td></td>
+    <a href="AddMovie" class="btn btn-outline-primary">Add Movie</a>
+    <div class="col-12">
+        <table style="border: 1px solid blue" class="table table-striped">
+            <thead>
+
+                <tr>
+                    <td><b>Movie No:</b></td>
+                    <td><b>Movie Title</b></td>
+                    <td><b>Genre</b></td>
+                    <td><b>Synopsis</b></td>
+                    <td><b>Duration</b></td>
+                    <td><b>ActorList</b></td>
+                    <td><b>View</b></td>
+
+                </tr>
+                @foreach (var movies in movie)
+                {
+                    <tr>
+                        <td>@movies.MovieID</td>
+                        <td>@movies.MovieTitle</td>
+                        <td>@movies.Genre</td>
+                        <td>@movies.Synopsis</td>
+                        <td>@movies.Duration</td>
+                        <td>@movies.ActorList</td>
+                        <td>
+                            <a href="~/Home/MovieDetails?id=@movies.MovieID">View</a>
+                        </td>
+                    </tr>
+                }
+
+            </thead>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "SeriesManager";
+    var series = (List<SeriesModel>)ViewData["series"];
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Welcome to Series Management</h1>
+    <td></td>
+    <a href="AddSeries" class="btn btn-outline-primary">Add Series</a>
+    <div class="col-12">
+        <table style="border: 1px solid blue" class="table table-striped">
+            <thead>
+
+                <tr>
+                    <td><b>Series ID:</b></td>
+                    <td><b>Series Title</b></td>
+                    <td><b>Genre</b></td>
+                    <td><b>Synopsis</b></td>
+                    <td><b>EpisodeList</b></td>
+                    <td><b>ActorList</b></td>
+                    <td><b>View</b></td>
+
+                </tr>
+                @foreach (var series1 in series)
+                {
+                    <tr>
+                        <td>@series1.SeriesID</td>
+                        <td>@series1.SeriesTitle</td>
+                        <td>@series1.Genre</td>
+                        <td>@series1.Synopsis</td>
+                        <td>@series1.EpisodeList</td>
+                        <td>@series1.ActorList</td>
+                        <td>
+                            <a href="~/Home/SeriesDetails?id=@series1.SeriesID">View</a>
+                        </td>
+                    </tr>
+                }
+
+            </thead>
+        </table>
+    </div>
+</div>

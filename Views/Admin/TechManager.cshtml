@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Rent";
+    var rents = (List<RentModel>)ViewData["rents"];
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Welcome to Tech Rental Management</h1>
+    <td></td>
+    <a href="AddTech" class="btn btn-outline-primary">Add New Tech</a>
+    <div class="col-12">
+        <table style="border: 1px solid blue" class="table table-striped">
+            <thead>
+
+                <tr>
+                    <td><b>Rent No:</b></td>
+                    <td><b>Tech Name</b></td>
+                    <td><b>Supplier No:</b></td>
+                    <td><b>Stock</b></td>
+                    <td><b>Rental Price</b></td>
+                    <td><b>View</b></td>
+
+                </tr>
+                                    @foreach (var rent in rents)
+                    {
+            <tr>
+                <td>@rent.RentID</td>
+                <td>@rent.ProductName</td>
+                <td>@rent.SupplierID</td>
+                <td>@rent.Stock</td>
+                <td>@rent.RentalPrice</td>
+                <td>
+                    <a href="TechView?id=@rent.RentID">View</a>
+                </td>
+            </tr>
+                    }
+
+            </thead>
+        </table>
+    </div>
+</div>

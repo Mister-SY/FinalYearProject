@@ -1,0 +1,60 @@
+﻿@{
+
+    ViewData["Title"] = "Register";
+
+}
+
+<div class="text-center">
+
+    <h1 class="display-4" style="margin-bottom:15px">Customer Registration</h1>
+
+    <div class="row">
+
+        <div class="col-md-6 mx-auto">
+
+            <form asp-controller="Home" asp-action="Register" method="post">
+
+                <p style="margin-top:15px; text-align:center">
+
+                    Customer Details <hr />
+
+                    @ViewData["message"]
+
+                    @{
+                        ViewData["message"] = "";
+                    }
+
+                </p>
+
+                <input class="form-control" id="username" type="text" name="username" placeholder="Username" required value=""><br />
+
+                <input class="form-control" id="firstname" type="text" name="firstname" placeholder="Firstname" required value=""><br />
+
+                <input class="form-control" id="lastname" type="text" name="lastname" placeholder="Lastname" required value=""><br />
+
+                <input class="form-control" id="dateofbirth" type="date" name="dateofbirth" placeholder="Dateofbirth" value=""><br />
+
+                <input class="form-control" id="telephone" type="number" name="telephone" placeholder="Telephone" required value="" /><br />
+
+                <input class="form-control" id="useremail" type="text" name="useremail" placeholder="User Email" required value=""><br />
+
+                <input class="form-control" id="password" type="text" name="password" placeholder="Password" required value=""><br />
+
+                <input class="form-control" id="addressline1" type="text" name="addressline1" placeholder="Address Line 1" required value=""><br />
+
+                <input class="form-control" id="addressline2" type="text" name="addressline2" placeholder="Address Line 2" required value="" /><br />
+
+                <input class="form-control" id="town" type="text" name="town" placeholder="Town" required value="" /><br />
+
+                <input class="form-control" id="postcode" type="text" name="postcode" placeholder="PostCode" required value="" /><br />
+
+                <input type="submit" value="Submit" OnClick="authenticateLogin" class="form-control btn btn-primary" />
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+

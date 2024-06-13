@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Genre";
+    var genre = (List<GenreModel>)ViewData["genre"];
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Welcome to Genres</h1>
+    <td></td>
+    <div class="col-12">
+        <table style="border: 1px solid blue" class="table table-striped">
+            <thead>
+
+                <tr>
+                    <td><b>Genre</b></td>
+                    <td><b>Movies</b></td>
+                    <td><b>Series</b></td>
+
+
+                </tr>
+                @foreach (var genres in genre)
+                {
+            <tr>
+
+                <td>
+                    @genres.GenreTitle
+                </td>
+
+                <td>
+                    <a href="~/Home/GenreMovieDetails?id=@genres.GenreID">Movies</a>
+                </td>
+
+                <td><a href="~/Home/GenreSeriesDetails?id=@genres.GenreID">Series</a>
+                </td>
+
+            </tr>
+                }
+
+            </thead>
+        </table>
+    </div>
+</div>

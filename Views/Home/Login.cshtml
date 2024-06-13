@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Admin Login";
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Welcome to Login</h1>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <p class="alert alert-danger">@ViewData["errorMsg"]</p>
+            <form asp-controller="Home" asp-action="Authenticate" method="post">
+                <input class="form-control" id="username" type="email" name="username" placeholder="Enter your Username" required value=""><br />
+                <input class="form-control" id="password" type="password" name="password" placeholder="Enter your Password" required value="" /><br />
+                <input type="submit" value="Sign in Securely" OnClick="authenticateLogin" class="form-control btn btn-primary" />
+            </form>
+        </div>
+    </div>
+</div>

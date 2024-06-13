@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Add Product Page";
+    var product = (ProductModel)ViewData["product"];
+}
+
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Update Product Details</h1>
+    <div class="row">
+
+        <div class="col-md-6 mx-auto">
+
+            <form asp-controller="Admin" asp-action="ProductManager" method="post">
+                <input class="form-control" id="productid" type="text" name="productid" placeholder="Enter your Product Name" readonly value=@product.ProductID><br />
+                <input class="form-control" id="productname" type="text" name="productname" placeholder="Enter your Product Name" required value=@product.ProductName><br />
+                <input class="form-control" id="productprice" type="number" name="productprice" placeholder="Enter your Product Price" required value=@product.ProductPrice><br />
+                <input class="form-control" id="productrating" type?="number" name="productrating" placeholder="Enter your Product Rating" required value=@product.ProductRating><br />
+                <input class="form-control" id="productqty" type="number" name="productqty" placeholder="Enter your Product Quantity" required value=@product.ProductQuantity><br />
+                <input class="form-control" id="productlink" type="url" name="productlink" placeholder="Enter your Product Image Link" required value=@product.ProductImageLink><br />
+                <textarea class="form-control" id="productdesc" type="text" name="productdesc" placeholder="Enter your Product Description" required value=@product.ProductDescription></textarea><br />
+                <input type="submit" value="Update Product" OnClick="authenticateLogin" class="form-control btn btn-AddProduct" />
+            </form>
+        </div>
+    </div>
+</div>

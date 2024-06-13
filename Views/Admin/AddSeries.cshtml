@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Add Series";
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="margin-bottom:15px">Add Series</h1>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form asp-controller="Home" asp-action="Stream" method="post">
+                <input class="form-control" id="seriestitle" type="text" name="seriestitle" placeholder="Enter the Series Title" required><br />
+                <input class="form-control" id="genre" type="text" name="genre" placeholder="Enter the Genre" required><br />
+                <input class="form-control" id="actorlist" type="text" name="actorlist" placeholder="Enter the Actor List" required><br />
+                <input class="form-control" id="episodelist" type="text" name="episodelist" placeholder="Enter the List of Episodes" required><br />
+                <input class="form-control" id="serieslink" type="url" name="serieslink" placeholder="Enter the Series Image Link" required><br />
+                <input class="form-control" id="seriestrailerlink" type="url" name="seriestrailerlink" placeholder="Enter the Series Trailer Link" required><br />
+                <textarea class="form-control" id="synopsis" type="text" name="synopsis" placeholder="Enter the Series Synopsis" required></textarea><br />
+                <input type="submit" value="Sign in Securely" OnClick="authenticateLogin" class="form-control btn btn-primary" />
+            </form>
+        </div>
+    </div>
+</div>

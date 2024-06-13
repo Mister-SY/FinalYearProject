@@ -1,0 +1,21 @@
+﻿@model IEnumerable<SeriesModel>
+@{
+    ViewData["Title"] = "Series";
+
+    var series = (List<SeriesModel>)ViewData["series"];
+}
+
+<div class="row">
+    @foreach (var series1 in series)
+    {
+        <div class="col-md-4" style="justify-items:center; align-content:center;">
+            <a href="SeriesDetails?id=@series1.SeriesID">
+                <img src=@series1.SeriesLink style="width:229px; height:260px; margin:auto; padding:10px" />
+                <p style="margin-top:15px; text-align:center">
+                    @series1.SeriesTitle
+                </p>
+            </a>
+        </div>
+    }
+</div>
+

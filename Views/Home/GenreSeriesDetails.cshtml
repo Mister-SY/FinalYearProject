@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SeriesModel>
+@{
+    ViewData["Title"] = "Series View";
+
+    var series = (SeriesModel)ViewData["series"];
+}
+<div class="text-center">
+    @{
+        if (series == null)
+        {
+            <h1 class="display-4" style="margin-bottom:15px">No Series was found with this Genre</h1>
+        }
+        else
+        {
+            <h1 class="display-4" style="margin-bottom:15px">@series.SeriesTitle</h1>
+            <div class="row">
+
+                <div class="col-md-4 " style="justify-items:center; align-content:center;">
+                    <img src=@series.SeriesLink style="width:200px; margin:auto; padding:2px" />
+                    <p style="margin-top:15px; text-align:center">
+                        @series.SeriesTitle
+                    </p>
+                </div>
+
+                <div class="col-md-6 " style="justify-items:center; align-content:center;">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Title</th>
+                            <td colspan="2">@series.SeriesTitle</td>
+                        </tr>
+                        <tr>
+                            <th>Genre</th>
+                            <td>@series.Genre</td>
+                        </tr>
+                        <tr>
+                            <th>Episode List</th>
+                            <td>@series.EpisodeList</td>
+                        </tr>
+                        <tr>
+                            <th>Actor List</th>
+                            <td>@series.ActorList</td>
+                        </tr>
+                        <tr>
+                            <th>Synopsis</th>
+                            <td>@series.Synopsis</td>
+                        </tr>
+                        <tr>
+                            <iframe width="560" height="315" src="@series.SeriesTrailerLink" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </tr>
+
+                        <tr>
+                            <th colspan="2"><a href="SeriesReview" class="btn btn-primary">Review</a></th>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+            }
+        }
+        </div>
